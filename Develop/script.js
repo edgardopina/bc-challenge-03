@@ -1,8 +1,10 @@
 // Assignment Code
+// const YES to validate user selected a criteria
+const YES = true;
 const NUMBER_OF_CRITERIA = 4;
 var generateBtn = document.querySelector("#generate");
 
-// criteria
+// criteria object
 // name - criteria name
 // selected - criteria was selected for password (true/false)
 // totalCharsInPwd - random # of total criteria chars TO BE used in pwd
@@ -119,8 +121,8 @@ var criteria = [
 // presents a loop of prompts
 var presentPrompts = function () {
 	console.log("Inside presentPrompts");
+
 	// assumption that users did not select any criteria
-	const YES = true;
 	var noneSelected = true;
 
 	// loops through to present all criterias
@@ -141,15 +143,23 @@ var presentPrompts = function () {
 	}
 };
 
+// gets and validates password lenght from user
 var promptPasswordLength = function () {
 	console.log("Inside promptPasswordLength");
+
+	// const values to validate a valid password length range
 	const PWD_LENGTH_MIN = 8;
 	const PWD_LENGTH_MAX = 128;
+
+	// read password length
 	var passwordLength = parseInt(
 		window.prompt(
 			"What length do you need your password to be? Minimum is 8 characters long. Maximum is 128 characters."
 		)
 	);
+
+	// validates for out of range password length (number), empty, or non numeric input (spaces, other characters)
+	// if length is invalid present prompts again
 	if (passwordLength < PWD_LENGTH_MIN || passwordLength > PWD_LENGTH_MAX || isNaN(passwordLength)) {
 		window.alert("Please enter a valid response.");
 		promptPasswordLength();
@@ -162,7 +172,39 @@ function generatePassword() {
 	console.log("Inside generatePassword");
 	presentPrompts();
 	var passwordLength = promptPasswordLength();
-	var assignPwdLengthIntoCriteriaLength = function (passwordLength) {};
+	var calculateCriteriaLength = function (passwordLength) {
+		// determine count of selected criteria
+		var countedSelectedCriteria = 0;
+		for (var i = 0; i < NUMBER_OF_CRITERIA; i++) {
+			if (criteria[i].selected === YES) {
+				countedSelectedCriteria++;
+			}
+		}
+
+		// determine each criteria characters group size
+		var equalSize = Math.floor(passwordLength / countedSelectedCriteria);
+		// adjusted criteria size to compensate for Math.floor
+		var adjustedSize = passwordLength - EqualSize * (countedSelectedCriteria - 1);
+
+		// controls processing of groups with equal and different size of characters (due to use of Math.floor)
+		var auxIndex = 1;
+		// process object criteria array to assign max number of random characters per criteria
+		for (var i = 0; i < NUMBER_OF_CRITERIA; i++) {
+			// process only if criteria was selected
+			if (criteria[i].selected == YES) {
+				// process all criteria except last one
+				if (auxIndex < countedSelectedCriteria) {
+					criteria[i].totalCharsInPwd = equalSize;
+				} else {
+					// process last criteria
+					criteria[i].totalCharsInPwd = adjustedSize;
+				}
+				auxIndex++;
+			}
+		}
+
+		var password = "";
+	};
 }
 
 // Write password to the #password input
