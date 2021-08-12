@@ -174,9 +174,8 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-	var password = ""; // initializes password string after each run
 	var passwordText = document.querySelector("#password"); // maps variable  to html element
-	passwordText.value = password; // cleans screen html id="password" content from previous password
+	passwordText.value = ""; // cleans screen html id="password" content from previous password
 	passwordText.value = generatePassword(); // updates html id="password" content with the built password
 }
 
