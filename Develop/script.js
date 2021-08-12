@@ -189,7 +189,7 @@ function writePassword() {
 	var passwordText = document.querySelector("#password"); // maps variable passwordText to html element id="password"
 	passwordText.value = password; // cleans html id="password" content from previous password
 	password = generatePassword(); // generate password
-	passwordText = document.querySelector("#password"); // locates element with id="password"
+	//passwordText = document.querySelector("#password"); // locates element with id="password"
 	passwordText.value = password; // updates html id="password" content with the built password
 }
 

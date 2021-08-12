@@ -26,7 +26,8 @@ body {
 
 header {
 	text-align: center;
-	padding: 20px;
+	padding: 10px 20px 0px 20px;
+	margin: 0px;
 	padding-top: 0px;
 	color: hsl(206, 17%, 28%);
 }
@@ -40,7 +41,7 @@ header {
 	font-size: 18px;
 	margin: 0 auto;
 	max-width: 800px;
-	padding: 30px 40px;
+	padding: 0px 10px;
 }
 
 .card-header::after {
@@ -49,6 +50,8 @@ header {
 	width: 100%;
 	background: #e7e9eb;
 	height: 2px;
+	padding: 0px;
+	margin: 0px;
 }
 
 .card-body {
@@ -57,6 +60,7 @@ header {
 
 .card-footer {
 	text-align: center;
+	min-height: 75px;
 }
 
 .card-footer::before {
@@ -115,7 +119,9 @@ button[disabled] {
 	border: 2px dashed #c0c7cf;
 	border-radius: 6px;
 	resize: none;
-	overflow: hidden;
+	overflow: scroll;
+	word-break: break-all;
+	/* min-width: 100px; */
 }
 
 @media (max-width: 690px) {
@@ -134,24 +140,8 @@ button[disabled] {
 	.btn {
 		font-size: 0.8rem;
 	}
-	header {
-		padding: 0px 20px;
-		margin: 0px;
-	}
-	.card {
-		padding: 0px 10px;
-	}
-	.card-header::after {
-		padding: 0px;
-		margin: 0px;
-		text-align: center;
-	}
-	.card-footer {
-		min-height: 75px;
-	}
 	#password {
-		overflow: scroll;
-		word-break: break-all;
+		min-height: 150px;
 		text-align: left;
 	}
 }
