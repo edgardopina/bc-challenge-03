@@ -183,7 +183,7 @@ function generatePassword() {
 	return password;
 }
 
-// Write password to the #password input
+// Write password to the #password  input
 function writePassword() {
 	var password = ""; // initializes password string after each run
 	var passwordText = document.querySelector("#password"); // maps variable passwordText to html element id="password"
