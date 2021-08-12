@@ -2,6 +2,7 @@
 *::before,
 *::after {
 	box-sizing: border-box;
+	text-align: center;
 }
 
 html,
@@ -25,7 +26,8 @@ body {
 
 header {
 	text-align: center;
-	padding: 20px;
+	padding: 10px 20px 0px 20px;
+	margin: 0px;
 	padding-top: 0px;
 	color: hsl(206, 17%, 28%);
 }
@@ -39,11 +41,7 @@ header {
 	font-size: 18px;
 	margin: 0 auto;
 	max-width: 800px;
-	padding: 30px 40px;
-	/**/
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	padding: 0px 10px;
 }
 
 .card-header::after {
@@ -52,8 +50,8 @@ header {
 	width: 100%;
 	background: #e7e9eb;
 	height: 2px;
-	/**/
-	text-align: center;
+	padding: 0px;
+	margin: 0px;
 }
 
 .card-body {
@@ -62,6 +60,7 @@ header {
 
 .card-footer {
 	text-align: center;
+min-height: 75px;
 }
 
 .card-footer::before {
@@ -114,13 +113,15 @@ button[disabled] {
 	padding-right: 15px;
 	padding-bottom: 85px;
 	font-size: 1.2rem;
-	text-align: center;
+	text-align: left;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 2px dashed #c0c7cf;
 	border-radius: 6px;
 	resize: none;
-	overflow: scroll; /* allows scrollbar for small screen devices   */
+	overflow: scroll;
+	word-break: break-all;
+	/* min-width: 100px; */
 }
 
 @media (max-width: 690px) {
@@ -138,5 +139,8 @@ button[disabled] {
 @media (max-width: 500px) {
 	.btn {
 		font-size: 0.8rem;
+	}
+	#password {
+		min-height: 150px;
 	}
 }
