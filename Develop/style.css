@@ -60,7 +60,7 @@ header {
 
 .card-footer {
 	text-align: center;
-min-height: 75px;
+	min-height: 75px;
 }
 
 .card-footer::before {
@@ -113,7 +113,7 @@ button[disabled] {
 	padding-right: 15px;
 	padding-bottom: 85px;
 	font-size: 1.2rem;
-	text-align: left;
+	text-align: center;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 2px dashed #c0c7cf;
@@ -142,5 +142,6 @@ button[disabled] {
 	}
 	#password {
 		min-height: 150px;
+		text-align: left;
 	}
 }
