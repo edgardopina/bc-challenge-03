@@ -52,6 +52,8 @@ header {
 
 .card-body {
 	min-height: 100px;
+	/*  */
+	display: flex;
 }
 
 .card-footer {
@@ -60,7 +62,7 @@ header {
 
 .card-footer::before {
 	content: " ";
-	display: block;
+	/* display: block; */
 	width: 100%;
 	background: #e7e9eb;
 	height: 2px;
@@ -68,7 +70,7 @@ header {
 
 .card-footer::after {
 	content: " ";
-	display: block;
+	/* display: block; */
 	clear: both;
 }
 
