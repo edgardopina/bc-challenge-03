@@ -40,6 +40,10 @@ header {
 	margin: 0 auto;
 	max-width: 800px;
 	padding: 30px 40px;
+	/**/
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .card-header::after {
